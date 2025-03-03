@@ -36,13 +36,23 @@ app.put('/products/:id', (req, res) => {
 });
 
 app.delete('/products/:id', (req, res) => {
+    console.log("delete");
     let products = getProducts();
     const productId = parseInt(req.params.id);
-    products = products.filter(p => p.id !== productId);
+    const productExist = products.some(p => p.id === productId);
+
+    if (!productExist){
+        return res.status(404).json({message: 'Товар не найден'});
+    }
+    console.log(productId);
+    products = products.filter(p => p['id'] !== productId);
+    console.log(products[1]['id']);
+
+
     saveProducts(products);
     res.json({ message: 'Товар удалён' });
 });
 
 app.listen(PORT, () => {
-    console.log(`Админ-панель запущена на http://localhost:${PORT}`);
+    console.log(`Админ-панель запущена на http://localhost:${PORT}/products`);
 });
