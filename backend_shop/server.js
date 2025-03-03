@@ -7,7 +7,7 @@ const PORT = 3000;
 
 app.use(cors());
 
-app.get('products', (req, res) => {
+app.get('/products', (req, res) => {
     fs.readFile('products.json', 'utf8', (err, data) => {
         if (err) {
             res.status(500).json({ error: 'Ошибка чтения файла'});
