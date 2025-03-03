@@ -27,6 +27,7 @@ app.put('/products/:id', (req, res) => {
     let products = getProducts();
     const productId = parseInt(req.params.id);
     const index = products.findIndex(p => p.id === productId);
+    console.log(index);
     if (index === -1) {
         return res.status(404).json({ error: 'Товар не найден' });
     }
