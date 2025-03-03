@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p>Цена: ${product.price} руб.</p>
                     <p>${product.description}</p>
                     <p>Категории: ${product.categories.join(", ")}</p>
+                    <div class="d-flex justify-content-end"><button class="btn-warning">Заказать</button></div>
                 `;
                 container.appendChild(card);
             });
