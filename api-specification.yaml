@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: API интернет-магазина
+  version: 1.0.0
+paths:
+  /products:
+    get:
+      summary: Получить список товаров
+      responses:
+        '200':
+          description: Успешный ответ со списком товаров
+    post:
+      summary: Добавить один или несколько товаров
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  price:
+                    type: integer
+                  description:
+                    type: string
+                  categories:
+                    type: array
+                    items:
+                      type: string
+      responses:
+        '201':
+          description: Товары добавлены
+  /products/{id}:
+    put:
+      summary: Редактировать товар
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Товар обновлён
+    delete:
+      summary: Удалить товар
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Товар удалён

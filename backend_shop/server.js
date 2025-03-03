@@ -20,5 +20,5 @@ app.get('products', (req, res) => {
 app.use(express.static('../frontend'));
 
 app.listen(PORT, () => {
-    console.log(`Сервер каталога запущен на http://localhost:${PORT}`)
+    console.log(`Сервер каталога запущен на http://localhost:${PORT}`);
 })
