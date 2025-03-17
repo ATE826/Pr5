@@ -7,4 +7,23 @@ body{
     padding: 10px;
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 29px;
+    padding-top: 29px;
+}
+
+/* Контейнер для карточек товаров */
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Отступы между карточками */
+    justify-content: space-between; /* Равномерное распределение карточек по ряду */
+}
+
+/* Стиль для каждой карточки товара */
+#products > div {
+    width: calc(33.33% - 20px); /* Ширина каждой карточки (3 карточки в ряду с учётом отступов) */
+    box-sizing: border-box;
+    background-color: rgb(254, 221, 177);
+    border-radius: 33px;
+    padding: 15px;
 }

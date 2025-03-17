@@ -10,13 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {  // Ждём полной 
                 
                 // Заполняем карточку товара данными из JSON
                 card.innerHTML = `
-                    <h2>${product.name}</h2>
-                    <p>Цена: ${product.price} руб.</p>
-                    <p>${product.description}</p>
-                    <p>Категории: ${product.categories.join(", ")}</p>
-                    <div class="d-flex justify-content-end">
-                        <button class="btn-warning">Заказать</button>
-                    </div>
+                    <table class="table">
+                        <h2>${product.name}</h2>
+                        <p>Цена: ${product.price} руб.</p>
+                        <p>${product.description}</p>
+                        <p>Категории: ${product.categories.join(", ")}</p>
+
+                        <div class="d-flex justify-content-center"><button class="btn-warning">Заказать</button></div>
+                    </table>
                 `;
                 
                 container.appendChild(card); // Добавляем карточку товара в контейнер
